@@ -36,4 +36,4 @@ COPY . .
 EXPOSE 80
 
 # 使用 gunicorn 启动应用
-CMD ["gunicorn", "--worker-class", "gevent", "--workers", "4", "--bind", "0.0.0.0:80", "run:app"]
+CMD ["gunicorn", "run:main()", "--worker-class", "gevent", "--workers", "4", "--bind", "0.0.0.0:80"]
