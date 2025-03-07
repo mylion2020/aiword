@@ -24,5 +24,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://{}:{}@{}/ai-word'.format(config
 # 初始化数据库
 db = SQLAlchemy(app)
 
-# 加载控制器
-from wxcloudrun import views
+# 导入视图
+def init_views():
+    from wxcloudrun import views
