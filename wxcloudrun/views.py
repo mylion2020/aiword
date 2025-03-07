@@ -71,7 +71,7 @@ def get_count():
     counter = Counters.query.filter(Counters.id == 1).first()
     return make_succ_response(0) if counter is None else make_succ_response(counter.count)
 
-
+'''
 def get_db_connection():
     """获取数据库连接"""
     return pymysql.connect(
@@ -83,6 +83,19 @@ def get_db_connection():
         charset='utf8',  # 修改为与数据库一致的字符集
         cursorclass=pymysql.cursors.DictCursor
     )
+'''
+def get_db_connection():
+    """获取数据库连接"""
+    return pymysql.connect(
+        host='10.15.101.169',
+        port=3306,
+        user='mylion',
+        password='Aa111111',
+        database='ai-word',
+        charset='utf8',  # 修改为与数据库一致的字符集
+        cursorclass=pymysql.cursors.DictCursor
+    )
+
 
 @app.route('/api/book-list', methods=['GET'])
 def get_book_list():
