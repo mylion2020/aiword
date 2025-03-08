@@ -197,8 +197,7 @@ def login():
         with conn.cursor() as cursor:
             if password:
                 # 密码登录
-                # password_hash = hashlib.md5(password.encode()).hexdigest()
-                password_hash=password
+                password_hash = hashlib.md5(password.encode()).hexdigest()
                 sql = 'SELECT user_id, phone, nickname FROM user WHERE phone = %s AND password = %s'
                 cursor.execute(sql, (phone, password_hash))
             else:
